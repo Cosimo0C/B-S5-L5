@@ -24,6 +24,13 @@ public class Postazione {
     @Column(nullable = false)
     protected boolean isLibera;
 
+    @ManyToOne
+    @JoinColumn(name = "edificio_id", nullable = false)
+    protected Edificio edificio;
+
+    @OneToOne(mappedBy = "postazione")
+    protected Prenotazione prenotazione;
+
     public Postazione(long id, String descrizione, Tipo tipo, int maxOccupanti, boolean isLibera) {
         this.id = id;
         this.descrizione = descrizione;

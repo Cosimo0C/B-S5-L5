@@ -1,10 +1,9 @@
 package cosimocrupi.L5.entites;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "Utente")
@@ -21,6 +20,8 @@ public class Utente {
     @Column(nullable = false)
     protected String email;
 
+    @OneToMany(mappedBy = "utente_id")
+    protected List<Prenotazione> prenotazioni;
     public Utente(String username, String nomeCompleto, String email) {
         this.username =username;
         this.nomeCompleto = nomeCompleto;

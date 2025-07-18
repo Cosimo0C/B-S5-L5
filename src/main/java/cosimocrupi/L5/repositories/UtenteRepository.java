@@ -11,5 +11,7 @@ public interface UtenteRepository extends JpaRepository<Utente, String> {
     Utente findByNome(String nomeCompleto);
     Utente findByEmail(String Email);
     Utente findByUsername(String username);
+    boolean existsByEmail(String email);
+    boolean existByUsername(String username);
 
 }

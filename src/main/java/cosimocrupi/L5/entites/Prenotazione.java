@@ -18,9 +18,19 @@ public class Prenotazione {
     protected long id;
     @Column(nullable = false)
     protected LocalDate dataEmissione;
+    @Column(nullable = false)
+    protected LocalDate scadenza;
 
-    public Prenotazione(long id, LocalDate dataEmissione) {
+    @ManyToOne
+    @JoinColumn(name = "utente_id", nullable = false)
+    protected Utente utente;
+
+    @OneToOne
+    @JoinColumn(name = "prenotazione_id", nullable = false, unique = true)
+    protected Postazione postazione;
+    public Prenotazione(long id, LocalDate dataEmissione, LocalDate scadenza) {
         this.id = id;
         this.dataEmissione = dataEmissione;
+        this.scadenza= dataEmissione;
     }
 }
