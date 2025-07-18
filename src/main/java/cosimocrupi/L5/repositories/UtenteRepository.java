@@ -8,11 +8,10 @@ import java.util.List;
 
 @Repository
 public interface UtenteRepository extends JpaRepository<Utente, String> {
-    Utente findByNome(String nomeCompleto);
+    Utente findByNomeCompleto(String nomeCompleto);
     Utente findByEmail(String Email);
     Utente findByUsername(String username);
     boolean existsByEmail(String email);
-    boolean existByUsername(String username);
-    Utente findByIdAndDelete(long id, Utente utente);
-
+    boolean existsByUsername(String username);
+    void deleteByUsername(String username);
 }

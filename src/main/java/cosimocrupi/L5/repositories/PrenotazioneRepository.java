@@ -10,6 +10,6 @@ import java.util.Optional;
 @Repository
 public interface PrenotazioneRepository extends JpaRepository<Prenotazione, Long> {
     Optional<Prenotazione> findById(long id);
-    Prenotazione findByDate(LocalDate dataEmissione);
+    Prenotazione findByDataEmissione(LocalDate dataEmissione);
     boolean existsById(long prenId);
 }

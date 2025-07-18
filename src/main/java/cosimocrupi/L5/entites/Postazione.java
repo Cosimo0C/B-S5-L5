@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "Postazione")
+@Table(name = "postazione")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -26,7 +26,7 @@ public class Postazione {
 
     @ManyToOne
     @JoinColumn(name = "edificio_id", nullable = false)
-    protected Edificio edificio;
+    private Edificio edificio;
 
     @OneToOne(mappedBy = "postazione")
     protected Prenotazione prenotazione;

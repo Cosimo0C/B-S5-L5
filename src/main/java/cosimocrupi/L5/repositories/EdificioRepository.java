@@ -12,7 +12,7 @@ public interface EdificioRepository extends JpaRepository<Edificio, Long> {
     Optional<Edificio> findById(long id);
     boolean existsById(long id);
     Edificio findByNome(String nome);
-    List<Edificio> findByAdress(String indirizzo);
-    List<Edificio> findByCity(String citta);
+    List<Edificio> findByIndirizzo(String indirizzo);
+    List<Edificio> findByCitta(String citta);
 
 }

@@ -28,12 +28,12 @@ public class EdificioService {
         if (nome != null) return edificioRepository.findByNome(nome);
         else throw new NotFoundException("Errore");
     }
-    public List<Edificio> findByAdress(String indirizzo){
-        if (indirizzo!= null ) return edificioRepository.findByAdress(indirizzo);
+    public List<Edificio> findByIndirizzo(String indirizzo){
+        if (indirizzo!= null ) return edificioRepository.findByIndirizzo(indirizzo);
         else throw new NotFoundException("Errore");
     }
-    public List<Edificio> findByCity(String citta){
-        if (citta!= null) return edificioRepository.findByCity(citta);
+    public List<Edificio> findByCitta(String citta){
+        if (citta!= null) return edificioRepository.findByCitta(citta);
         else throw new NotFoundException("Errore");
     }
 }

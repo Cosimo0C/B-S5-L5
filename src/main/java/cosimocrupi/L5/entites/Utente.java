@@ -6,7 +6,7 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Utente")
+@Table(name = "utente")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,7 +20,7 @@ public class Utente {
     @Column(nullable = false)
     protected String email;
 
-    @OneToMany(mappedBy = "utente_id")
+    @OneToMany(mappedBy = "utente")
     protected List<Prenotazione> prenotazioni;
     public Utente(String username, String nomeCompleto, String email) {
         this.username =username;

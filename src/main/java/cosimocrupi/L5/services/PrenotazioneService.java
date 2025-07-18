@@ -23,7 +23,7 @@ public class PrenotazioneService {
     public Optional<Prenotazione> findById(long id){
         return prenotazioneRepository.findById(id);
     }
-    public Prenotazione findByDate(LocalDate dataEmissione){
-        return prenotazioneRepository.findByDate(dataEmissione);
+    public Prenotazione findByDataEmissione(LocalDate dataEmissione){
+        return prenotazioneRepository.findByDataEmissione(dataEmissione);
     }
 }

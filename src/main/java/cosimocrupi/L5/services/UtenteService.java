@@ -15,15 +15,15 @@ public class UtenteService {
     private UtenteRepository utenteRepository;
     public void saveUtente(Utente newUtente){
         if (utenteRepository.existsByEmail(newUtente.getEmail())) throw new ValiditaException("Email"+ newUtente.getEmail() + "già in uso");
-        if (utenteRepository.existByUsername(newUtente.getUsername())) throw new ValiditaException("Username" + newUtente.getUsername()+ "già in uso");
+        if (utenteRepository.existsByUsername(newUtente.getUsername())) throw new ValiditaException("Username" + newUtente.getUsername()+ "già in uso");
         if (newUtente.getNomeCompleto().length()<4) throw new ValiditaException("Il nome completo non può essere più corto di 4 caratteri");
         utenteRepository.save(newUtente);
         log.info("L'utente " + newUtente.getNomeCompleto() + "è stato salvato correttamente");
     }
-    public Utente findByNome(String nomeCompleto){
-      return this.utenteRepository.findByNome(nomeCompleto);
+    public Utente findByNomeCompleto(String nomeCompleto){
+      return this.utenteRepository.findByNomeCompleto(nomeCompleto);
     }
-    public Utente findById(String username){
+    public Utente findByUsername(String username){
         if (username!=null) return utenteRepository.findByUsername(username);
         else throw new NotFoundException("Errore");
     }
@@ -31,16 +31,9 @@ public class UtenteService {
      if (email!= null) return utenteRepository.findByEmail(email);
      else throw new NotFoundException("Errore null");
     }
-    public void findByAndDelete(String username){
-        Utente fnd= this.findById(username);
+    public void deleteByUsername(String username){
+        Utente fnd= this.findByUsername(username);
         utenteRepository.delete(fnd);
         log.info("L'utente con username" + username + " è stato cancellato correttamente!");
-    }
-    public void findByIdAndUpdate(long utenteId, Utente modUtente, String nomeCompleto, String email) {
-        Utente fnd = this.findById(String.valueOf(utenteId));
-        fnd.setNomeCompleto(modUtente.setNomeCompleto(nomeCompleto));
-        fnd.setEmail(modUtente.setEmail(email));
-        utenteRepository.save(fnd);
-        log.info("L'utente con id " + utenteId + " è stato modificato con successo!");
     }
 }

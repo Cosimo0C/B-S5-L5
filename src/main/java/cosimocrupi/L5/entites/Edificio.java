@@ -6,7 +6,7 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Edificio")
+@Table(name = "edificio")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -23,7 +23,7 @@ public class Edificio {
     @Column(nullable = false)
     protected String citta;
 
-    @OneToMany(mappedBy = "edificio_id")
+    @OneToMany(mappedBy = "edificio")
     protected List<Postazione> postazioni;
 
     public Edificio(long id, String nome, String indirizzo, String citta) {
