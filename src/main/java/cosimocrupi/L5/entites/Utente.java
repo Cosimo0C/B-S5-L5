@@ -15,14 +15,14 @@ import lombok.*;
 public class Utente {
     @Id
     @Setter(AccessLevel.NONE)
-    protected String id;
+    protected String username;
     @Column(nullable = false)
     protected String nomeCompleto;
     @Column(nullable = false)
     protected String email;
 
-    public Utente(String id, String nomeCompleto, String email) {
-        this.id = id;
+    public Utente(String username, String nomeCompleto, String email) {
+        this.username =username;
         this.nomeCompleto = nomeCompleto;
         this.email = email;
     }
