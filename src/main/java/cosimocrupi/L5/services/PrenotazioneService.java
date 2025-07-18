@@ -1,7 +1,6 @@
 package cosimocrupi.L5.services;
 
 import cosimocrupi.L5.entites.Prenotazione;
-import cosimocrupi.L5.exceptions.NotFoundException;
 import cosimocrupi.L5.exceptions.ValiditaException;
 import cosimocrupi.L5.repositories.PrenotazioneRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.Locale;
 import java.util.Optional;
 
 @Service
