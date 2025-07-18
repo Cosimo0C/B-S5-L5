@@ -26,8 +26,7 @@ public class Edificio {
     @OneToMany(mappedBy = "edificio")
     protected List<Postazione> postazioni;
 
-    public Edificio(long id, String nome, String indirizzo, String citta) {
-        this.id = id;
+    public Edificio(String nome, String indirizzo, String citta) {
         this.nome = nome;
         this.indirizzo = indirizzo;
         this.citta = citta;

@@ -28,8 +28,7 @@ public class Prenotazione {
     @OneToOne
     @JoinColumn(name = "prenotazione_id", nullable = false, unique = true)
     protected Postazione postazione;
-    public Prenotazione(long id, LocalDate dataEmissione, LocalDate scadenza) {
-        this.id = id;
+    public Prenotazione( LocalDate dataEmissione, LocalDate scadenza) {
         this.dataEmissione = dataEmissione;
         this.scadenza= dataEmissione;
     }

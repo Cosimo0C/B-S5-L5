@@ -31,8 +31,7 @@ public class Postazione {
     @OneToOne(mappedBy = "postazione")
     protected Prenotazione prenotazione;
 
-    public Postazione(long id, String descrizione, Tipo tipo, int maxOccupanti, boolean isLibera) {
-        this.id = id;
+    public Postazione( String descrizione, Tipo tipo, int maxOccupanti, boolean isLibera) {
         this.descrizione = descrizione;
         this.tipo = tipo;
         this.maxOccupanti = maxOccupanti;

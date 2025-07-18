@@ -15,7 +15,7 @@ import java.util.Optional;
 public class PrenotazioneService {
     @Autowired
     private PrenotazioneRepository prenotazioneRepository;
-    public void saveNewPrenotazione(Prenotazione newPrenotazione){
+    public void savePrenotazione(Prenotazione newPrenotazione){
         if (prenotazioneRepository.existsById(newPrenotazione.getId())) throw new ValiditaException("Prenotazione già esistente");
         prenotazioneRepository.save(newPrenotazione);
         log.info("Prenotazione salvata correttamente");

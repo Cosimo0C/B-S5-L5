@@ -14,7 +14,7 @@ public class UtenteService {
     @Autowired
     private UtenteRepository utenteRepository;
     public void saveUtente(Utente newUtente){
-        if (utenteRepository.existsByEmail(newUtente.getEmail())) throw new ValiditaException("Email"+ newUtente.getEmail() + "già in uso");
+        if (utenteRepository.existsByEmail(newUtente.getEmail())) throw new ValiditaException("Email "+ newUtente.getEmail() + " già in uso");
         if (utenteRepository.existsByUsername(newUtente.getUsername())) throw new ValiditaException("Username" + newUtente.getUsername()+ "già in uso");
         if (newUtente.getNomeCompleto().length()<4) throw new ValiditaException("Il nome completo non può essere più corto di 4 caratteri");
         utenteRepository.save(newUtente);
