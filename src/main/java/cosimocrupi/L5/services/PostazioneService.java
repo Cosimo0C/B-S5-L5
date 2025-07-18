@@ -33,4 +33,9 @@ public class PostazioneService {
         if (isLibera) return postazioneRepository.findByLibera(isLibera);
         else throw new NotFoundException("Errore");
     }
+    public List<Postazione> findByTipoAndCitta(Tipo tipo, String citta){
+        List<Postazione> postazioni= postazioneRepository.findByTipoAndCitta(tipo, citta);
+        if (postazioni.isEmpty()){System.out.println("Nessuna trovata!");}
+        return postazioni;
+    }
 }

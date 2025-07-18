@@ -27,4 +27,14 @@ public class Utente {
         this.nomeCompleto = nomeCompleto;
         this.email = email;
     }
+
+    public String setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
+        return nomeCompleto;
+    }
+
+    public String setEmail(String email) {
+        this.email = email;
+        return email;
+    }
 }

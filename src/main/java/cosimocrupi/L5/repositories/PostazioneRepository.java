@@ -14,4 +14,5 @@ public interface PostazioneRepository extends JpaRepository<Postazione, Long> {
     boolean existsById(long id);
     List<Postazione> findByTipo(Tipo tipo);
     List<Postazione> findByLibera(boolean isLibera);
+    List<Postazione> findByTipoAndCitta(Tipo tipo, String citta);
 }

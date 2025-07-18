@@ -8,8 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 @Slf4j
 public class UtenteService {
@@ -32,5 +30,17 @@ public class UtenteService {
     public Utente findByEmail(String email){
      if (email!= null) return utenteRepository.findByEmail(email);
      else throw new NotFoundException("Errore null");
+    }
+    public void findByAndDelete(String username){
+        Utente fnd= this.findById(username);
+        utenteRepository.delete(fnd);
+        log.info("L'utente con username" + username + " è stato cancellato correttamente!");
+    }
+    public void findByIdAndUpdate(long utenteId, Utente modUtente, String nomeCompleto, String email) {
+        Utente fnd = this.findById(String.valueOf(utenteId));
+        fnd.setNomeCompleto(modUtente.setNomeCompleto(nomeCompleto));
+        fnd.setEmail(modUtente.setEmail(email));
+        utenteRepository.save(fnd);
+        log.info("L'utente con id " + utenteId + " è stato modificato con successo!");
     }
 }
