@@ -11,6 +11,7 @@ import java.util.Optional;
 @Repository
 public interface PostazioneRepository extends JpaRepository<Postazione, Long> {
     Optional<Postazione> findById(long id);
+    boolean existsById(long id);
     List<Postazione> findByTipo(Tipo tipo);
-    List<Postazione> findByTrue(boolean isLibera);
+    List<Postazione> findByLibera(boolean isLibera);
 }
